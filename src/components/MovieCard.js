@@ -6,7 +6,7 @@ const MovieCard = (props) => {
   return (
     <div className="card">
       <div className="poster">
-        <img src={posterUrl} alt="avengertof" />
+        <img src={posterUrl} alt="posterUrl" />
       </div>
       <div className="details">
         <h2>{title}</h2>

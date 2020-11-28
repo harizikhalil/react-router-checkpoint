@@ -5,6 +5,7 @@ import { ListsMovies } from "./ListsMovies";
 import MovieCard from "./MovieCard";
 import AddMovie from "./AddMovie";
 import Filter from "./Filter";
+import {Link} from "react-router-dom"
 import "./MovieList.css";
 
 const MovieList = () => {
@@ -61,7 +62,7 @@ const MovieList = () => {
 
     if (filtredMovies.length !== 0) {
       return filtredMovies.map((movie) => {
-        return <MovieCard movie={movie} key={movie.id} />;
+        return <Link to={{pathname:`/movie/${movie.id}`,state:movie}} key={movie.id} ><MovieCard movie={movie}  /></Link>;
       });
     } else {
       return (
@@ -78,7 +79,7 @@ const MovieList = () => {
       <div className="List-container">
         <div className="List-movies">{displayMovies()}</div>
         <div className="add-Movie">
-          <button className="add-btn" onClick={onOpenModal}>
+          <button className="btn" onClick={onOpenModal}>
             Add new Movie
           </button>
         </div>
